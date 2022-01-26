@@ -1,3 +1,18 @@
+"""
+File Name: ServerSim.py
+Associated Files:
+Required Python Libraries: numpy
+Required External Libraries (will try to pip install): matplotlib
+Author: John Lukowski(lukowskijohn@gmail.com)
+Date Created: 1/14/2022
+
+Purpose: Simulate a stock market for the use of training/testing ai traders
+Date Modified: 1/26/2022
+
+Licence: Currently Private Work and unlicensed for distribution, public or private use other than by the author.
+"""
+
+# Imports
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -107,9 +122,7 @@ class Company:
                     self.value += amount*price
                     buyOrder[1] = 0
                 self.asking = price
-            if not buyOrder[1]: self.buyOrders.remove(buyOrder) # If this buy order was fulfilled, clear if from the buy orders
-                            
-                    
+            if not buyOrder[1]: self.buyOrders.remove(buyOrder) # If this buy order was fulfilled, clear if from the buy order
 
 class Agent:
     def __init__(self, seed, strategy):
